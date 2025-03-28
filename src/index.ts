@@ -17,7 +17,7 @@ export class MyMCP extends McpAgent {
 	}
 }
 
-// Export the OAuth handler as the default
+// Export the OAuth handler as the default with noAuth: true to bypass authentication
 export default new OAuthProvider({
 	apiRoute: "/sse",
 	// TODO: fix these types
@@ -28,4 +28,5 @@ export default new OAuthProvider({
 	authorizeEndpoint: "/authorize",
 	tokenEndpoint: "/token",
 	clientRegistrationEndpoint: "/register",
+	noAuth: true, // Bypass authentication
 });
